@@ -1,5 +1,5 @@
 <?php
-require_once"./utils/formulaire.php";
+include_once "./utils/Formulaire.php";
 $form = new formulaire();
 ?>
 <div class="mt-5 container">

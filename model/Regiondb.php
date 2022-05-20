@@ -31,10 +31,13 @@ class Regiondb{
     }
 }
 //button supprimer
+
 if (isset($_GET['delete']))
 {
 $id = $_GET['delete'];
-$sql = "DELETE FROM gestion WHERE id='$id'";
+$sql = "DELETE FROM gestion WHERE Id=?";
+$prepare=$this->dbc->prepare($sql);
+$prepare->execute([$id]);
 $query = 'mysql_query'($sql);
 if ($query)
 {
